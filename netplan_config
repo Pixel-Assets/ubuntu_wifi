@@ -1,3 +1,5 @@
+#https://tttapa.github.io/Pages/Raspberry-Pi/Installation+Setup/WiFi-Setup.html
+
 sudo nano /etc/netplan/10-my-config.yaml
 
   network:

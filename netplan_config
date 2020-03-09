@@ -1,0 +1,19 @@
+sudo nano /etc/netplan/10-my-config.yaml
+
+  network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+      optional: true
+  wifis:
+    wlan0:
+      dhcp4: true
+      optional: true
+      access-points:
+        "Your-WiFi-Network-Name":
+          password: "******"
+          
+sudo netplan generate
+
+sudo netplan generate

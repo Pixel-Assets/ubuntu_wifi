@@ -1,0 +1,16 @@
+sudo apt update
+sudo apt full-upgrade
+# Edit the /etc/default/rpi-eeprom-update file and change the FIRMWARE_RELEASE_STATUS value from "critical" to "beta."
+sudo nano /etc/default/rpi-eeprom-update
+# Install bootloader
+sudo rpi-eeprom-update -d -f /lib/firmware/raspberrypi/bootloader/beta/pieeprom-2020-05-15.bin
+# Check /lib/firmware/raspberrypi/bootloader/beta/ for newer ver if the above fails
+sudo reboot now
+# Check fw ver
+vcgencmd bootloader_version
+# Copy your microSD card
+# Grab all the *.dat and *.elf files from the /boot folder of the Raspberry Pi firmware release from May 22
+#https://github.com/raspberrypi/firmware/tree/a6c9b6b48ce86ef2527586a50760d52f1b33f642
+# Copy the *.dat and *.elf files to /boot - overwrite where necessary
+sudo shutdown now
+# Remove the SD card, insert the USB and boot!
